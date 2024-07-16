@@ -20,7 +20,7 @@ export default function Edit(props) {
     const [sid, setSid] = useState("");
 
     const updateStudent = () => {
-        console.log("The New Student Is: ", entry);
+        console.log("The edit Student Is: ", entry);
 
         fetch("api/student/" + sid, {
             method: "PUT",
@@ -59,9 +59,9 @@ export default function Edit(props) {
     };
 
     useEffect(() => {
-        let id_ = window.location.search;
+        let id_ = window.location.search;// Get the query string from the URL
         if (id_) {
-            id_ = id_.split("=")[1];
+            id_ = id_.split("=")[1];     // Extract the value of the 'id' parameter from the query string
         }
 
         if (id_) {
@@ -69,15 +69,26 @@ export default function Edit(props) {
 
             fetch("api/student/" + id_).then(r => r.json()).then(d => {
                 console.log("Student for update: ", d);
-                setGender(d.gender);
-                setGraduated(d.graduated);
-                setData(d);
-                Object.assign(entry, d);
+                setGender(d.gender);      // Update the 'gender' state with the fetched gender value
+                setGraduated(d.graduated);// Update the 'graduated' state with the fetched graduation status
+                setData(d);               // Update the 'data' state with the fetched student data
+                Object.assign(entry, d);  // Update the 'entry' object with the fetched data
             }).catch(e => console.log("Error getting student for update: ", e));
         }
 
     }, []);
 
+/*
+The return statement in a React functional component specifies the JSX (JavaScript XML) that should be rendered to the DOM.
+The Document Object Model (DOM) is a programming interface for web documents
+
+->Nodes and Elements:
+The primary building blocks of the DOM are nodes. There are different types of nodes, including element nodes, text nodes, attribute nodes, and more.
+Element nodes correspond to HTML tags (e.g., <div>, <p>, <a>).
+
+->Event Handling:
+The DOM allows for the handling of events, such as user interactions (clicks, input, etc.). You can attach event listeners to DOM elements to respond to user actions.
+*/
     return (
         <section>
             <div style={{ margin: '3rem', padding: '5rem', border: '1px solid #CCCCCC' }}>

@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using WebApiMongoDB_1.Models;
 using WebApiMongoDB_1.Services;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace WebApiMongoDB.Controllers
 {
+    /*
+    The [Route] attribute specifies the route template that this controller responds to. 
+    This means that any HTTP requests to the path api/student (and related routes) will be handled by this controller.
+    */
     [Route("api/student")]
     [ApiController]
     public class StudentController : ControllerBase

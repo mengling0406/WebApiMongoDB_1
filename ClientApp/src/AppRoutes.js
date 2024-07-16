@@ -1,7 +1,7 @@
 
-import Home from "./components/Home";
-import Edit from "./components/Edit";
-import New from "./components/New";
+import Home from "./pages/Home";
+import Edit from "./pages/Edit";
+import New from "./pages/New";
 
 const AppRoutes = [
   {
