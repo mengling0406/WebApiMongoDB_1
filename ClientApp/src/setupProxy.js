@@ -4,7 +4,15 @@ const { env } = require('process');
 const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
   env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'http://localhost:46880';
 
-//To avoid CORS(Cross-Origin Resource Sharing) issues 
+/*
+
+To avoid CORS(Cross-Origin Resource Sharing) issues 
+-> Access-Control-Allow-Methods
+-> Access-Control-Allow-Headers
+-> Access-Control-Allow-Origin
+
+*/
+
 const context = [
   "/weatherforecast",
   "/api/student",

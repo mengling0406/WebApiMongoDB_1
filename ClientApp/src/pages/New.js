@@ -50,7 +50,10 @@ export default function New(props) {
         console.log("The New Student Is: ", entry);
     };
 
-
+/*
+JSX (JavaScript XML) is a syntax extension for JavaScript commonly used with React to describe what the UI should look like. 
+It allows developers to write HTML-like code directly within JavaScript
+*/
     return (
         <section>
             <div style={{ margin: '3rem', padding: '5rem', border: '1px solid #CCCCCC' }}>

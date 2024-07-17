@@ -14,7 +14,10 @@ namespace WebApiMongoDB_1.Services
     {
         private readonly IMongoCollection<Student> _studentCollection;
 
-        //Constructor that initializes the MongoDB client and database, and sets up the collection reference using the provided configuration settings
+        /*
+        Constructor that initializes the MongoDB client and database, 
+        and sets up the collection reference using the provided configuration settings
+        */
         public StudentServices(IOptions<DatabaseSettings> settings)
         {
             var mongoClient = new MongoClient(settings.Value.Connection);

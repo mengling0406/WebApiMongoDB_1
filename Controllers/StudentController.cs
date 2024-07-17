@@ -18,12 +18,9 @@ namespace WebApiMongoDB.Controllers
             _studentServices = studentServices;
         }
 
-
-        // GET: api/student
         [HttpGet]
         public async Task<List<Student>> Get() => await _studentServices.GetAsync();
 
-        // GET api/student/64a51019c925955cfda51194
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<Student>> Get(string id)
         {
@@ -36,7 +33,6 @@ namespace WebApiMongoDB.Controllers
             return student;
         }
 
-        // POST api/student
         [HttpPost]
         public async Task<ActionResult<Student>> Post(Student newStudent)
         {
@@ -44,7 +40,6 @@ namespace WebApiMongoDB.Controllers
             return CreatedAtAction(nameof(Get), new {id = newStudent.Id}, newStudent);
         }
 
-        // PUT api/student/64a51019c925955cfda51194
         [HttpPut("{id:length(24)}")]
         public async Task<ActionResult> Put(string id, Student updateStudent)
         {
@@ -61,7 +56,6 @@ namespace WebApiMongoDB.Controllers
             return Ok("Updated Successfully");
         }
 
-        // DELETE api/student/64a51019c925955cfda51194
         [HttpDelete("{id:length(24)}")]
         public async Task<ActionResult> Delete(string id)
         {
